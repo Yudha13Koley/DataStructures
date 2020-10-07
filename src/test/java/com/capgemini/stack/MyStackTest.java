@@ -37,9 +37,8 @@ public class MyStackTest {
 		myStack.printSatck();
 		myStack.pop();
 		myStack.printSatck();
-		myStack.pop();
-		int i=myStack.size();
-		assertEquals(0,i);
+		Inode result=myStack.pop();
+		assertEquals(MyFirstNode,result);
 		
 	}
 

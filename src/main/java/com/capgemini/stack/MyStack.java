@@ -19,13 +19,13 @@ public class MyStack {
 		return myLinkedList.getHead();
 	}
 
-	public void pop() {
-		myLinkedList.pop();
-		
+	public Inode pop() {
+		return myLinkedList.pop();
+
 	}
 
 	public int size() {
 		return myLinkedList.size();
-		
+
 	}
 }
