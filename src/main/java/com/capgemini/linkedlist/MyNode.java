@@ -2,7 +2,7 @@ package com.capgemini.linkedlist;
 
 import com.capgemini.interfaces.Inode;
 
-public class MyNode<T> implements Inode<T> {
+public class MyNode<T extends Comparable> implements Inode<T> {
 	private T Key;
 	private Inode<T> Next;
 

@@ -143,4 +143,38 @@ public class MyLinkedList {
 		}
 	}
 
+	public void addInDescendingOrder(Inode node) {
+		if (this.head == null || node.getKey().compareTo(this.head.getKey()) > 0)
+			add(node);
+		else {
+			Inode temp = this.head;
+			while (temp.getNext() != null) {
+				if (node.getKey().compareTo(temp.getNext().getKey()) > 0) {
+					insert(temp, node);
+					break;
+				}
+				temp = temp.getNext();
+			}
+			if (temp.getNext() == null)
+				append(node);
+		}
+	}
+
+	public void addInAscendingOrder(Inode node) {
+		if (this.head == null || node.getKey().compareTo(this.head.getKey()) < 0)
+			add(node);
+		else {
+			Inode temp = this.head;
+			while (temp.getNext() != null) {
+				if (node.getKey().compareTo(temp.getNext().getKey()) < 0) {
+					insert(temp, node);
+					break;
+				}
+				temp = temp.getNext();
+			}
+			if (temp.getNext() == null)
+				append(node);
+		}
+	}
+
 }
