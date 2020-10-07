@@ -51,4 +51,21 @@ public class MyTest {
 		assertEquals(true, result);
 	}
 
+	@Test
+	public void GivenANodeInsertAfterANode_WhenDone_ReturnsTrue() {
+		MyNode<Integer> MyFirstNode = new MyNode<>(56);
+		MyNode<Integer> MySecondNode = new MyNode<>(30);
+		MyNode<Integer> MyThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(MyFirstNode);
+		myLinkedList.append(MyThirdNode);
+		myLinkedList.printList();
+		myLinkedList.insert(MyFirstNode, MySecondNode);
+		myLinkedList.printList();
+		boolean result = myLinkedList.getHead().equals(MyFirstNode)
+				&& myLinkedList.getHead().getNext().equals(MySecondNode)
+				&& myLinkedList.getHead().getNext().getNext().equals(MyThirdNode)
+				&& myLinkedList.getTail().equals(MyThirdNode);
+		assertEquals(true, result);
+	}
 }
