@@ -112,7 +112,7 @@ public class MyTest {
 		myLinkedList.append(MyThirdNode);
 		Inode result = myLinkedList.search(30);
 		System.out.println(result.getKey());
-		assertEquals(MySecondNode, result);
+		assertEquals(MySecondNode.getKey(), result.getKey());
 	}
 	@Test
 	public void Given3NumbersList_WhenAddNewNumberBetweenNodes_ReturnsTrue() {
@@ -129,6 +129,23 @@ public class MyTest {
 		myLinkedList.printList();
 		boolean result=myLinkedList.search(30).getNext().getKey().equals(40);
 		assertEquals(true, result);
+	}
+	@Test
+	public void Given4NumbersList_WhenSearchNodeAndDelete_ReturnsNewListSize() {
+		MyNode<Integer> MyFirstNode = new MyNode<>(56);
+		MyNode<Integer> MySecondNode = new MyNode<>(30);
+		MyNode<Integer> MyThirdNode = new MyNode<>(40);
+		MyNode<Integer> MyFourthNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(MyFirstNode);
+		myLinkedList.append(MySecondNode);
+		myLinkedList.append(MyThirdNode);
+		myLinkedList.append(MyFourthNode);
+		myLinkedList.printList();
+		myLinkedList.deleteBySearch(40);
+		myLinkedList.printList();
+		int i=myLinkedList.size();
+		assertEquals(3,i);
 	}
 	
 }

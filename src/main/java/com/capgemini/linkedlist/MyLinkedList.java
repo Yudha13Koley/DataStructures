@@ -95,11 +95,11 @@ public class MyLinkedList {
 		Inode temp = this.head;
 		while (temp.getNext() != null) {
 			if (temp.getKey().equals(i))
-				break;
+				return temp;
 			temp = temp.getNext();
 		}
-		if (!temp.equals(this.tail))
-			return temp;
+		if (i.equals(this.tail.getKey()))
+			return this.tail;
 		else
 			return null;
 	}
@@ -107,6 +107,40 @@ public class MyLinkedList {
 	public void insertBySearch(Integer i, Inode newNode) {
 		insert(search(i), newNode);
 
+	}
+
+	public void deleteBySearch(Integer i) {
+		Inode searchRes = search(i);
+		Inode temp = this.head;
+		if (temp.getNext() == null || searchRes.equals(temp))
+			pop();
+		else if (searchRes.equals(tail))
+			popLast();
+		else {
+			while (temp.getNext() != null) {
+				if (temp.getNext().equals(searchRes)) {
+					temp.setNext(searchRes.getNext());
+					break;
+				}
+				temp = temp.getNext();
+			}
+		}
+	}
+
+	public int size() {
+		Inode temp = this.head;
+		int count = 1;
+		if (this.head == null)
+			return 0;
+		else if (this.head.equals(this.tail))
+			return 1;
+		else {
+			while (temp.getNext() != null) {
+				count++;
+				temp = temp.getNext();
+			}
+			return count;
+		}
 	}
 
 }
