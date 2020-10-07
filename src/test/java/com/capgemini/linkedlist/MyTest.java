@@ -100,4 +100,17 @@ public class MyTest {
 		myLinkedList.printList();
 		assertEquals(MyThirdNode,result);
 	}
+	@Test
+	public void Given3Numbers_WhenSearchByKey_ReturnsNode() {
+		MyNode<Integer> MyFirstNode = new MyNode<>(56);
+		MyNode<Integer> MySecondNode = new MyNode<>(30);
+		MyNode<Integer> MyThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(MyFirstNode);
+		myLinkedList.append(MySecondNode);
+		myLinkedList.append(MyThirdNode);
+		Inode result=myLinkedList.search(30);
+		System.out.println(result.getKey());
+		assertEquals(MySecondNode,result);
+	}
 }

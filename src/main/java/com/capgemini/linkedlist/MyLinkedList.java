@@ -93,4 +93,18 @@ public class MyLinkedList {
 		return temp2;
 	}
 
+	public Inode search(Integer i) {
+		Inode temp=this.head;
+		while(temp.getNext()!=null)
+		{
+			if(temp.getKey().equals(i))
+				break;
+			temp=temp.getNext();
+		}
+		if(!temp.equals(this.tail))
+		return temp;
+		else
+			return null;
+	}
+
 }
