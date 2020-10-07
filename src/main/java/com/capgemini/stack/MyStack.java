@@ -2,7 +2,6 @@ package com.capgemini.stack;
 
 import com.capgemini.interfaces.Inode;
 import com.capgemini.linkedlist.MyLinkedList;
-import com.capgemini.linkedlist.MyNode;
 
 public class MyStack {
 	private MyLinkedList myLinkedList = new MyLinkedList();
@@ -18,5 +17,15 @@ public class MyStack {
 
 	public Inode peak() {
 		return myLinkedList.getHead();
+	}
+
+	public void pop() {
+		myLinkedList.pop();
+		
+	}
+
+	public int size() {
+		return myLinkedList.size();
+		
 	}
 }

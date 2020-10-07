@@ -40,16 +40,20 @@ public class MyLinkedList {
 	}
 
 	public void printList() {
-		StringBuffer myNodes = new StringBuffer("My Nodes : ");
-		Inode temp = head;
-		while (temp.getNext() != null) {
+		if (this.head == null)
+			System.out.println("Empty !");
+		else {
+			StringBuffer myNodes = new StringBuffer("My Nodes : ");
+			Inode temp = head;
+			while (temp.getNext() != null) {
+				myNodes.append(temp.getKey());
+				if (!temp.equals(tail))
+					myNodes.append("->");
+				temp = temp.getNext();
+			}
 			myNodes.append(temp.getKey());
-			if (!temp.equals(tail))
-				myNodes.append("->");
-			temp = temp.getNext();
+			System.out.println(myNodes);
 		}
-		myNodes.append(temp.getKey());
-		System.out.println(myNodes);
 	}
 
 	public void append(Inode node) {
