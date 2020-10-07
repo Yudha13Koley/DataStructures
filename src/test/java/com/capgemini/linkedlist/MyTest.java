@@ -15,5 +15,21 @@ public class MyTest {
 	boolean result=MyFirstNode.getNext().equals(MySecondNode)&&MySecondNode.getNext().equals(MyThirdNode);
 	assertEquals(true, result);
 	}
+	
+	@Test
+	public void Given3Numbers_WhenAddedToTheFrontSequentially_PrintsList() {
+		MyNode<Integer> MyFirstNode=new MyNode<>(70);
+		MyNode<Integer> MySecondNode=new MyNode<>(30);
+		MyNode<Integer> MyThirdNode=new MyNode<>(56);
+		MyLinkedList myLinkedList=new MyLinkedList();
+		myLinkedList.add(MyFirstNode);
+		myLinkedList.add(MySecondNode);
+		myLinkedList.add(MyThirdNode);
+		myLinkedList.printList();
+		boolean result=myLinkedList.getHead().equals(MyThirdNode)&&myLinkedList.getHead().getNext().equals(MySecondNode)&&
+				myLinkedList.getHead().getNext().getNext().equals(MyFirstNode)&& myLinkedList.getTail().equals(MyFirstNode);
+		assertEquals(true,result);
+		
+	}
 
 }
