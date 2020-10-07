@@ -77,34 +77,36 @@ public class MyLinkedList {
 	}
 
 	public Inode popLast() {
-		Inode temp=this.head;
+		Inode temp = this.head;
 		Inode temp2 = null;
-		while(temp.getNext()!=null)
-		{
-			if(temp.getNext().equals(this.tail))
-			{
-			temp2=temp.getNext();
-			this.tail=temp;
-			temp.setNext(null);
-			break;
+		while (temp.getNext() != null) {
+			if (temp.getNext().equals(this.tail)) {
+				temp2 = temp.getNext();
+				this.tail = temp;
+				temp.setNext(null);
+				break;
 			}
-			temp=temp.getNext();
+			temp = temp.getNext();
 		}
 		return temp2;
 	}
 
 	public Inode search(Integer i) {
-		Inode temp=this.head;
-		while(temp.getNext()!=null)
-		{
-			if(temp.getKey().equals(i))
+		Inode temp = this.head;
+		while (temp.getNext() != null) {
+			if (temp.getKey().equals(i))
 				break;
-			temp=temp.getNext();
+			temp = temp.getNext();
 		}
-		if(!temp.equals(this.tail))
-		return temp;
+		if (!temp.equals(this.tail))
+			return temp;
 		else
 			return null;
+	}
+
+	public void insertBySearch(Integer i, Inode newNode) {
+		insert(search(i), newNode);
+
 	}
 
 }
