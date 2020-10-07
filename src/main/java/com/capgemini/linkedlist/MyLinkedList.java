@@ -10,27 +10,22 @@ public class MyLinkedList {
 		this.head = null;
 		this.tail = null;
 	}
-	
 
 	public Inode getHead() {
 		return head;
 	}
 
-
 	public void setHead(Inode head) {
 		this.head = head;
 	}
-
 
 	public Inode getTail() {
 		return tail;
 	}
 
-
 	public void setTail(Inode tail) {
 		this.tail = tail;
 	}
-
 
 	public void add(Inode node) {
 		if (this.tail == null)
@@ -55,6 +50,18 @@ public class MyLinkedList {
 		}
 		myNodes.append(temp.getKey());
 		System.out.println(myNodes);
+	}
+
+	public void append(Inode node) {
+		if (this.tail == null)
+			this.tail = node;
+		if (this.head == null)
+			this.head = node;
+		else {
+			this.tail.setNext(node);
+			this.tail = node;
+		}
+
 	}
 
 }
