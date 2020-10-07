@@ -72,7 +72,7 @@ public class MyTest {
 	}
 	
 	@Test
-	public void Given3Numbers_WhenPoped_ReturnsNewList() {
+	public void Given3Numbers_WhenPoped_ReturnsElement() {
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
@@ -84,5 +84,20 @@ public class MyTest {
 		Inode result=myLinkedList.pop();
 		myLinkedList.printList();
 		assertEquals(MyFirstNode,result);
+	}
+	
+	@Test
+	public void Given3Numbers_WhenPopedLast_ReturnsLastElement() {
+		MyNode<Integer> MyFirstNode = new MyNode<>(56);
+		MyNode<Integer> MySecondNode = new MyNode<>(30);
+		MyNode<Integer> MyThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(MyFirstNode);
+		myLinkedList.append(MySecondNode);
+		myLinkedList.append(MyThirdNode);
+		myLinkedList.printList();
+		Inode result=myLinkedList.popLast();
+		myLinkedList.printList();
+		assertEquals(MyThirdNode,result);
 	}
 }
