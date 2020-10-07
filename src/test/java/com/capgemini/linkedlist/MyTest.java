@@ -3,6 +3,8 @@ package com.capgemini.linkedlist;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import com.capgemini.interfaces.Inode;
+
 public class MyTest {
 
 	@Test
@@ -67,5 +69,20 @@ public class MyTest {
 				&& myLinkedList.getHead().getNext().getNext().equals(MyThirdNode)
 				&& myLinkedList.getTail().equals(MyThirdNode);
 		assertEquals(true, result);
+	}
+	
+	@Test
+	public void Given3Numbers_WhenPoped_ReturnsNewList() {
+		MyNode<Integer> MyFirstNode = new MyNode<>(56);
+		MyNode<Integer> MySecondNode = new MyNode<>(30);
+		MyNode<Integer> MyThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(MyFirstNode);
+		myLinkedList.append(MySecondNode);
+		myLinkedList.append(MyThirdNode);
+		myLinkedList.printList();
+		Inode result=myLinkedList.pop();
+		myLinkedList.printList();
+		assertEquals(MyFirstNode,result);
 	}
 }
