@@ -185,7 +185,7 @@ public class MyLinkedList<K extends Comparable<K>> {
 
 	@Override
 	public String toString() {
-		return "My Linked List Nodes {" + head + "}";
+		return "My Linked List Nodes {" + head + "} \n";
 	}
 
 }

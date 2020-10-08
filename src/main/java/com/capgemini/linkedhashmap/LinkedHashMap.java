@@ -10,7 +10,7 @@ public class LinkedHashMap<K extends Comparable<K>, V> {
 	ArrayList<MyLinkedList<K>> myBucketArray;
 
 	public LinkedHashMap() {
-		numBuckets = 10;
+		numBuckets = 15;
 		myBucketArray = new ArrayList<>(numBuckets);
 		for (int i = 0; i < numBuckets; i++) {
 			this.myBucketArray.add(null);
@@ -30,7 +30,8 @@ public class LinkedHashMap<K extends Comparable<K>, V> {
 	public int getBucketIndex(K key) {
 		int hashCode = Math.abs(key.hashCode());
 		int index = hashCode % numBuckets;
-		//System.out.println("Key : " + key + " HashCode :" + hashCode + " Index " + index);
+		 //System.out.println("Key : " + key + " HashCode :" + hashCode + " Index " +
+		 //index);
 		return index;
 	}
 
@@ -52,8 +53,18 @@ public class LinkedHashMap<K extends Comparable<K>, V> {
 
 	@Override
 	public String toString() {
-		return "My Linked Hash Map { "+myBucketArray+" }";
+		return "My Linked Hash Map { " + myBucketArray + " }";
 	}
-	
+
+	public void remove(K string) {
+		int index = this.getBucketIndex(string);
+		MyLinkedList<K> myLinkedList = this.myBucketArray.get(index);
+		if(myLinkedList==null)
+			System.out.println(" No Such Word In Sentence !");
+		else {
+			myBucketArray.get(index).deleteBySearch(string);
+		}
+		
+	}
 
 }
