@@ -1,6 +1,6 @@
 package com.capgemini.interfaces;
 
-public interface Inode<T extends Comparable> {
+public interface Inode<T extends Comparable<T>> {
 	T getKey();
 
 	void setKey(T Key);

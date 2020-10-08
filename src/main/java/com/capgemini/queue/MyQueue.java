@@ -3,10 +3,10 @@ package com.capgemini.queue;
 import com.capgemini.interfaces.Inode;
 import com.capgemini.linkedlist.MyLinkedList;
 
-public class MyQueue {
-	MyLinkedList myLinkedList = new MyLinkedList();
+public class MyQueue<K extends Comparable<K>> {
+	MyLinkedList<K> myLinkedList = new MyLinkedList<>();
 
-	public void enqueue(Inode node) {
+	public void enqueue(Inode<K> node) {
 		myLinkedList.append(node);
 	}
 
@@ -15,7 +15,7 @@ public class MyQueue {
 
 	}
 
-	public Inode dequeue() {
+	public Inode<K> dequeue() {
 		return myLinkedList.pop();
 
 	}

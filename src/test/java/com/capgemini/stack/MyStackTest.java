@@ -11,7 +11,7 @@ public class MyStackTest {
 
 	@Test
 	public void Given3Numbers_WhenAddedIntoTheStack_ReturnsTheLastAdded() {
-		MyStack myStack = new MyStack();
+		MyStack<Integer> myStack = new MyStack<Integer>();
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
@@ -19,13 +19,13 @@ public class MyStackTest {
 		myStack.push(MySecondNode);
 		myStack.push(MyThirdNode);
 		myStack.printSatck();
-		Inode result=myStack.peak();
+		Inode<Integer> result=myStack.peak();
 		assertEquals(MyThirdNode,result);
 	}
 	
 	@Test
 	public void Given3Numbers_WhenPoped_ReturnsNewStack() {
-		MyStack myStack = new MyStack();
+		MyStack<Integer> myStack = new MyStack<Integer>();
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
@@ -37,7 +37,7 @@ public class MyStackTest {
 		myStack.printSatck();
 		myStack.pop();
 		myStack.printSatck();
-		Inode result=myStack.pop();
+		Inode<Integer> result=myStack.pop();
 		assertEquals(MyFirstNode,result);
 		
 	}

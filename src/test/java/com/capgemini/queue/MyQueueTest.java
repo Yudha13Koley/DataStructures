@@ -11,7 +11,7 @@ public class MyQueueTest {
 
 	@Test
 	public void Given3Numbers_WhenEnqueue_AddsNodeAtLast() {
-		MyQueue myQueue = new MyQueue();
+		MyQueue<Integer> myQueue = new MyQueue<>();
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
@@ -23,7 +23,7 @@ public class MyQueueTest {
 
 	@Test
 	public void Given3Numbers_WhenDequeue_DeletesNodeFromLast() {
-		MyQueue myQueue = new MyQueue();
+		MyQueue<Integer> myQueue = new MyQueue<>();
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
@@ -31,7 +31,7 @@ public class MyQueueTest {
 		myQueue.enqueue(MySecondNode);
 		myQueue.enqueue(MyThirdNode);
 		myQueue.printQueue();
-		Inode result = myQueue.dequeue();
+		Inode<Integer> result = myQueue.dequeue();
 		myQueue.printQueue();
 		assertEquals(MyFirstNode, result);
 	}

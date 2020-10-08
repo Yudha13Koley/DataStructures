@@ -3,10 +3,10 @@ package com.capgemini.stack;
 import com.capgemini.interfaces.Inode;
 import com.capgemini.linkedlist.MyLinkedList;
 
-public class MyStack {
-	private MyLinkedList myLinkedList = new MyLinkedList();
+public class MyStack<K extends Comparable<K>> {
+	private MyLinkedList<K> myLinkedList = new MyLinkedList<>();
 
-	public void push(Inode node) {
+	public void push(Inode<K> node) {
 		myLinkedList.add(node);
 
 	}
@@ -15,11 +15,11 @@ public class MyStack {
 		myLinkedList.printList();
 	}
 
-	public Inode peak() {
+	public Inode<K> peak() {
 		return myLinkedList.getHead();
 	}
 
-	public Inode pop() {
+	public Inode<K> pop() {
 		return myLinkedList.pop();
 
 	}

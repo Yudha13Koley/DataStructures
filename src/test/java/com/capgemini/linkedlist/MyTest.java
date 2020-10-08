@@ -23,7 +23,7 @@ public class MyTest {
 		MyNode<Integer> MyFirstNode = new MyNode<>(70);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(56);
-		MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.add(MyFirstNode);
 		myLinkedList.add(MySecondNode);
 		myLinkedList.add(MyThirdNode);
@@ -41,7 +41,7 @@ public class MyTest {
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.append(MyFirstNode);
 		myLinkedList.append(MySecondNode);
 		myLinkedList.append(MyThirdNode);
@@ -58,7 +58,7 @@ public class MyTest {
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.append(MyFirstNode);
 		myLinkedList.append(MyThirdNode);
 		myLinkedList.printList();
@@ -76,12 +76,12 @@ public class MyTest {
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.append(MyFirstNode);
 		myLinkedList.append(MySecondNode);
 		myLinkedList.append(MyThirdNode);
 		myLinkedList.printList();
-		Inode result = myLinkedList.pop();
+		Inode<Integer> result = myLinkedList.pop();
 		myLinkedList.printList();
 		assertEquals(MyFirstNode, result);
 	}
@@ -91,12 +91,12 @@ public class MyTest {
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.append(MyFirstNode);
 		myLinkedList.append(MySecondNode);
 		myLinkedList.append(MyThirdNode);
 		myLinkedList.printList();
-		Inode result = myLinkedList.popLast();
+		Inode<Integer> result = myLinkedList.popLast();
 		myLinkedList.printList();
 		assertEquals(MyThirdNode, result);
 	}
@@ -106,11 +106,11 @@ public class MyTest {
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.append(MyFirstNode);
 		myLinkedList.append(MySecondNode);
 		myLinkedList.append(MyThirdNode);
-		Inode result = myLinkedList.search(30);
+		Inode<Integer> result = myLinkedList.search(30);
 		System.out.println(result.getKey());
 		assertEquals(MySecondNode.getKey(), result.getKey());
 	}
@@ -120,7 +120,7 @@ public class MyTest {
 		MyNode<Integer> MyFirstNode = new MyNode<>(56);
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.append(MyFirstNode);
 		myLinkedList.append(MySecondNode);
 		myLinkedList.append(MyThirdNode);
@@ -138,7 +138,7 @@ public class MyTest {
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(40);
 		MyNode<Integer> MyFourthNode = new MyNode<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.append(MyFirstNode);
 		myLinkedList.append(MySecondNode);
 		myLinkedList.append(MyThirdNode);
@@ -156,7 +156,7 @@ public class MyTest {
 		MyNode<Integer> MySecondNode = new MyNode<>(30);
 		MyNode<Integer> MyThirdNode = new MyNode<>(40);
 		MyNode<Integer> MyFourthNode = new MyNode<>(70);
-		MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 		myLinkedList.addInAscendingOrder(MyFirstNode);
 		myLinkedList.printList();
 		myLinkedList.addInAscendingOrder(MySecondNode);
