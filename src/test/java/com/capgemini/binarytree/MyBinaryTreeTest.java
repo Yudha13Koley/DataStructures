@@ -30,4 +30,17 @@ public class MyBinaryTreeTest {
 		assertEquals(count, size);
 	}
 
+	@Test
+	public void GivenNumbersArray_WhenSearchedForAKey_ShouldReturnKey() {
+		BinaryTree<Integer> myBinaryTree = new BinaryTree<>();
+		Integer[] nums = { 56, 30, 70, 22, 40, 60, 95, 11, 65, 3, 16, 63, 67 };
+		int count = 0;
+		for (Integer i : nums) {
+			myBinaryTree.add(i);
+			count++;
+		}
+		MyBinaryNode<Integer> result = myBinaryTree.search(63);
+		assertEquals(63, result.key.intValue());
+	}
+
 }
